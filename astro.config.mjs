@@ -1,11 +1,15 @@
-// astro.config.mjs
+// @ts-check
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+
+import tailwindcss from "@tailwindcss/vite";
+
 import icon from "astro-icon";
 
+// https://astro.build/config
 export default defineConfig({
-  // ADD THIS LINE BELOW:
-  site: "https://sankalpa-yoga.pages.dev",
+  vite: {
+    plugins: [tailwindcss()],
+  },
 
-  integrations: [tailwind(), icon()],
+  integrations: [icon()],
 });
