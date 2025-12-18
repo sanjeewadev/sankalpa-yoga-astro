@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
+import MapImage from '../../assets/google-map.avif';
 
 // Import your local map image or use a remote URL if you prefer
 // If you don't have this file, change src={MapImage} to a URL string below.
@@ -56,8 +57,8 @@ const contactDetails = [
           rel="noopener noreferrer"
           class="block rounded-2xl overflow-hidden shadow-sm h-64 relative group cursor-pointer"
         >
-          <img 
-            src="https://images.unsplash.com/photo-1596627827721-e4975f2844c8?q=80&w=2070&auto=format&fit=crop" 
+          <Image 
+            src= {MapImage},
             alt="Map Location of Ahangama" 
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
