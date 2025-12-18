@@ -7,6 +7,8 @@ import PageHero from '../components/common/PageHero.astro';
 import RetreatInclusions from '../components/retreats/RetreatInclusions.astro';
 import Accommodation from '../components/retreats/Accommodation.astro';
 import RetreatCTA from '../components/retreats/RetreatCTA.astro';
+
+import HeroImage from '../assets/instructor-meditation-pose.avif';
 ---
 
 <Layout title="Retreats - Reconnect in Nature">
@@ -17,7 +19,7 @@ import RetreatCTA from '../components/retreats/RetreatCTA.astro';
       title="Sanctuary in Nature" 
       subtitle="Disconnect from the noise. Reconnect with yourself. A luxury eco-retreat in the heart of the jungle."
       label="Eco-Luxury Sanctuary" 
-      image="https://cdn.pixabay.com/photo/2022/06/23/06/24/yoga-asanas-7279224_1280.jpg"
+      image={HeroImage}
     />
     <RetreatInclusions />
     <Accommodation />

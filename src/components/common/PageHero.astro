@@ -1,25 +1,29 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import defaultBg from '../../assets/sankalpa-home-hero-main.avif';
 interface Props {
   title: string;
   subtitle?: string;
   label?: string; // Optional top tag (e.g. "Since 2026")
-  image?: string; // Background image URL
+  image?: ImageMetadata; // Image URL or imported image
 }
 
 const { 
   title, 
   subtitle, 
   label, 
-  image = "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop" // Default fallback image
+  image = defaultBg // Default fallback image
 } = Astro.props;
 ---
 
 <section class="relative h-[60vh] flex items-center justify-center overflow-hidden bg-primary-dark">
   
   <div class="absolute inset-0 z-0">
-    <img 
+    <Image 
       src={image} 
-      alt={title} 
+      alt={title}
+      loading="eager" 
       class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
     />
     <div class="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/60 via-transparent to-black/60"></div>

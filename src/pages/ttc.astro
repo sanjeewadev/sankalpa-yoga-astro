@@ -9,6 +9,8 @@ import Curriculum from '../components/ttc/Curriculum.astro';
 import DailySchedule from '../components/ttc/DailySchedule.astro';
 import WhoIsThisFor from '../components/ttc/WhoIsThisFor.astro';
 import SyllabusCTA from '../components/ttc/SyllabusCTA.astro';
+
+import HeroImage from '../assets/vinyasa-flow-practice-session.avif';
 ---
 
 <Layout title="200-Hour Teacher Training">
@@ -19,7 +21,7 @@ import SyllabusCTA from '../components/ttc/SyllabusCTA.astro';
       title="200-Hour Yoga Teacher Training" 
       subtitle="A transformative journey into the heart of yoga. Become a confident, certified teacher."
       label="Yoga Alliance Certified"
-      image="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=2069&auto=format&fit=crop"
+      image={HeroImage}
     />
     
     <Curriculum />
