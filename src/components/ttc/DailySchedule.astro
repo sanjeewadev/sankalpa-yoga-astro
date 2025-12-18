@@ -1,0 +1,47 @@
+---
+const schedule = [
+  { time: "06:00 AM", activity: "Satsang (Meditation & Chanting)" },
+  { time: "07:30 AM", activity: "Asana Practice (Hatha/Vinyasa)" },
+  { time: "09:30 AM", activity: "Sattvic Breakfast" },
+  { time: "11:00 AM", activity: "Philosophy & Anatomy Theory" },
+  { time: "01:00 PM", activity: "Lunch & Rest" },
+  { time: "03:00 PM", activity: "Teaching Methodology Workshop" },
+  { time: "05:00 PM", activity: "Evening Flow or Yin Yoga" },
+  { time: "07:00 PM", activity: "Dinner & Community Time" }
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="container-custom">
+    <div class="flex flex-col lg:flex-row gap-16 items-start">
+      
+      <div class="lg:w-1/3 sticky top-24">
+        <h2 class="text-3xl font-bold text-primary mb-6">A Day in the Life</h2>
+        <p class="text-text-muted mb-6 leading-relaxed">
+          Our schedule is designed to immerse you fully in the yogic lifestyle. From the first light of dawn to the evening stars, every moment is an opportunity for growth.
+        </p>
+        <div class="p-6 bg-secondary rounded-xl border border-primary/10">
+          <p class="text-primary italic font-display text-lg">
+            "Discipline is the bridge between goals and accomplishment."
+          </p>
+        </div>
+      </div>
+
+      <div class="lg:w-2/3 w-full">
+        <div class="space-y-4">
+          {schedule.map((item) => (
+            <div class="flex items-center group">
+              <div class="w-24 flex-shrink-0 text-right mr-6 font-bold text-accent text-sm uppercase tracking-wider">
+                {item.time}
+              </div>
+              <div class="flex-grow bg-gray-50 p-4 rounded-lg border-l-4 border-gray-200 group-hover:border-accent group-hover:bg-secondary transition-all duration-300">
+                <span class="text-primary font-medium">{item.activity}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

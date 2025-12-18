@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
+import Image1 from '../../assets/jungle-yoga-shala-ahangama-view.avif'; // Update filename if needed
+import Image2 from '../../assets/luxury-eco-retreat-accommodation-villa.avif'; // Update filename if needed
+---
+
+<section class="py-20 bg-white">
+  <div class="container-custom">
+    
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+        More Than Just Asanas
+      </h2>
+      <p class="text-text-muted text-lg">
+        At Sankalpa, we bridge the gap between ancient tradition and modern science. Discover an ecosystem designed for your growth.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[300px]">
+
+      <div class="group relative col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2 rounded-3xl overflow-hidden cursor-pointer">
+        <Image 
+          src={Image1}
+          alt="Teacher Training Group" 
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-8">
+          <span class="inline-block px-3 py-1 bg-accent text-white text-xs font-bold uppercase tracking-wider rounded-full mb-3">
+            Most Popular
+          </span>
+          <h3 class="text-3xl font-bold text-white mb-2">200-Hour Teacher Training</h3>
+          <p class="text-gray-200 mb-4 line-clamp-2">
+            Become a certified instructor. A comprehensive curriculum covering anatomy, philosophy, and teaching methodology.
+          </p>
+          <span class="text-white underline underline-offset-4 decoration-accent font-medium group-hover:text-accent transition-colors">
+            View Syllabus &rarr;
+          </span>
+        </div>
+      </div>
+
+      <div class="group relative col-span-1 md:col-span-1 lg:col-span-1 lg:row-span-2 rounded-3xl overflow-hidden bg-secondary">
+        <Image
+          src={Image2}
+          alt="Yoga Shala View" 
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
+        <div class="absolute top-0 left-0 p-6 w-full">
+          <h3 class="text-2xl font-bold text-white mb-1">The Forest Shala</h3>
+          <p class="text-white/90 text-sm">Practice surrounded by nature.</p>
+        </div>
+      </div>
+
+      <div class="group relative col-span-1 md:col-span-1 lg:col-span-1 lg:row-span-1 rounded-3xl bg-secondary p-6 flex flex-col justify-center items-center text-center border border-gray-100 hover:border-primary/20 transition-colors">
+        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+          <Icon name="heroicons:academic-cap" class="w-8 h-8" />
+        </div>
+        <h3 class="text-lg font-bold text-primary mb-2">Yoga Alliance</h3>
+        <p class="text-sm text-text-muted">
+          Internationally recognized RYT-200 and RYT-500 certification.
+        </p>
+      </div>
+
+      <div class="group relative col-span-1 md:col-span-1 lg:col-span-1 lg:row-span-1 rounded-3xl overflow-hidden">
+         <img 
+          src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop" 
+          alt="Healthy Food" 
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+           <h3 class="text-xl font-bold text-white text-center">Sattvic Dining</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,55 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const modules = [
+  {
+    title: "Techniques & Training",
+    desc: "In-depth practice of Asanas, Pranayama, and Meditation. Learn proper alignment, modifications, and contraindications.",
+    icon: "heroicons:user"
+  },
+  {
+    title: "Anatomy & Physiology",
+    desc: "Understanding the physical body (skeletal, muscular) and the energy body (chakras, nadis) applied to yoga practice.",
+    icon: "heroicons:heart"
+  },
+  {
+    title: "Yoga Philosophy",
+    desc: "Study of the Yoga Sutras of Patanjali, Hatha Yoga Pradipika, and the history of yoga traditions.",
+    icon: "heroicons:book-open"
+  },
+  {
+    title: "Teaching Methodology",
+    desc: "The art of sequencing, voice projection, adjusting students, and business of yoga. Practice teaching starts from week 1.",
+    icon: "heroicons:microphone"
+  }
+];
+---
+
+<section class="py-20 bg-secondary">
+  <div class="container-custom">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl font-bold text-primary mb-4">Course Curriculum</h2>
+      <p class="text-text-muted">
+        Our comprehensive syllabus meets and exceeds international Yoga Alliance standards.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {modules.map((mod) => (
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center text-primary">
+            <Icon name={mod.icon} class="w-6 h-6" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-primary mb-2">{mod.title}</h3>
+            <p class="text-text-muted leading-relaxed text-sm">
+              {mod.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

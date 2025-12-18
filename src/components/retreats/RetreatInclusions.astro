@@ -1,0 +1,75 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const inclusions = [
+  { 
+    title: "Daily Yoga", 
+    desc: "Two sessions daily (Vinyasa & Yin) in our open-air jungle shala.",
+    icon: "heroicons:sun"
+  },
+  { 
+    title: "Sattvic Nutrition", 
+    desc: "Three farm-to-table vegetarian meals prepared by local chefs.",
+    icon: "heroicons:sparkles"
+  },
+  { 
+    title: "Mindfulness", 
+    desc: "Guided meditation, breathwork, and sound healing ceremonies.",
+    icon: "heroicons:heart"
+  },
+  { 
+    title: "Excursions", 
+    desc: "Optional surf lessons, temple visits, and spice plantation tours.",
+    icon: "heroicons:globe-asia-australia"
+  }
+];
+---
+
+<section class="py-24 bg-secondary">
+  <div class="container-custom">
+    <div class="flex flex-col lg:flex-row items-center gap-16">
+      
+      <div class="w-full lg:w-1/2">
+        <h2 class="text-4xl font-bold text-primary mb-8">The Experience</h2>
+        <div class="space-y-8">
+          {inclusions.map((item) => (
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                <Icon name={item.icon} class="w-6 h-6" />
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-primary">{item.title}</h3>
+                <p class="text-text-muted mt-1 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div class="mt-12 p-6 bg-white rounded-xl border border-primary/10 shadow-sm">
+          <p class="text-primary italic font-display text-lg">
+            "We don't sell schedules. We offer space. Our retreats are designed to be fluid, allowing you to do as much or as little as you need."
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full lg:w-1/2 relative">
+        <div class="grid grid-cols-2 gap-4">
+          <img 
+            class="rounded-2xl object-cover h-64 w-full shadow-md hover:scale-[1.02] transition-transform duration-500" 
+            src="https://images.unsplash.com/photo-1591228127791-8e2eaef098d3?q=80&w=1974&auto=format&fit=crop" 
+            alt="Healthy Food"
+            loading="lazy"
+          >
+          <img 
+            class="rounded-2xl object-cover h-64 w-full translate-y-8 shadow-md hover:scale-[1.02] transition-transform duration-500" 
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop" 
+            alt="Nature Walk"
+            loading="lazy"
+          >
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,84 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Sarah Jenkins",
+    location: "London, UK",
+    image: "https://randomuser.me/api/portraits/women/32.jpg",
+    quote: "The 200-hour TTC was life-changing. The depth of knowledge of the teachers and the immersive environment in Sri Lanka allowed me to disconnect and truly focus.",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Marcus Weber",
+    location: "Berlin, Germany",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
+    quote: "I've been to many retreats, but Sankalpa is on another level. The balance between rigorous asana practice, philosophy, and downtime was perfect.",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Priya Patel",
+    location: "Mumbai, India",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    quote: "Coming back to the roots of yoga. Authentic teachings delivered with modern clarity. The community feel was strong, and I made friends for life here.",
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "James O'Connell",
+    location: "Dublin, Ireland",
+    image: "https://randomuser.me/api/portraits/men/22.jpg",
+    quote: "The facilities are stunning—practicing in the open-air shala is magical. But it's the warmth of the staff and teachers that really makes this place special.",
+    rating: 4,
+  }
+];
+---
+
+<section class="py-24 bg-white overflow-hidden">
+  <div class="container-custom">
+    
+    <div class="max-w-2xl mx-auto text-center mb-16">
+      <h2 class="text-4xl font-bold text-primary mb-4">Stories of Transformation</h2>
+      <p class="text-text-muted text-lg">Hear from our global community of graduates and retreat guests.</p>
+    </div>
+
+    <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-4 px-4 scrollbar-hide">
+      
+      {testimonials.map((item) => (
+        <div class="snap-center flex-shrink-0 w-[90%] md:w-[600px] bg-secondary rounded-3xl p-8 md:p-10 relative">
+          
+          <div class="absolute top-6 right-8 text-accent/20">
+            <Icon name="heroicons:chat-bubble-bottom-center-text" class="w-16 h-16" />
+          </div>
+
+          <div class="flex text-accent mb-6">
+            {[...Array(item.rating)].map(() => (
+              <Icon name="heroicons:star" class="w-5 h-5 text-accent" />
+            ))}
+          </div>
+
+          <blockquote class="relative z-10 text-xl md:text-2xl font-display text-primary leading-relaxed mb-8">
+            "{item.quote}"
+          </blockquote>
+
+          <div class="flex items-center">
+            <img src={item.image} alt={item.name} class="w-14 h-14 rounded-full object-cover mr-4 border-2 border-white shadow-sm" />
+            <div>
+              <h4 class="font-bold text-primary">{item.name}</h4>
+              <span class="text-sm text-text-muted">{item.location}</span>
+            </div>
+          </div>
+
+        </div>
+      ))}
+      
+      <div class="snap-center flex-shrink-0 w-4 md:w-1/12"></div>
+
+    </div>
+    
+    <p class="text-center text-sm text-text-muted mt-4 md:hidden">Swipe to read more</p>
+  </div>
+</section>

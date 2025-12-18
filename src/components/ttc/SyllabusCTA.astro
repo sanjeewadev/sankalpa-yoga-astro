@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="py-24 bg-primary-dark relative overflow-hidden">
+  <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
+
+  <div class="container-custom relative z-10 text-center max-w-3xl">
+    <h2 class="text-4xl font-display font-bold text-white mb-6">
+      Start Your Journey Today
+    </h2>
+    <p class="text-gray-300 text-lg mb-10 leading-relaxed">
+      Ready to deepen your practice? Download our detailed 2026 Course Brochure to see the full curriculum, upcoming retreat dates, and tuition options.
+    </p>
+    
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact" class="btn-primary bg-accent hover:bg-white hover:text-primary text-white border-none text-lg px-8 py-4 flex items-center gap-2 justify-center">
+        <span>Request Course Brochure</span>
+        <Icon name="heroicons:arrow-down-tray" class="w-5 h-5" />
+      </a>
+    </div>
+    
+    <p class="mt-6 text-sm text-gray-500">
+      * We will send the PDF directly to your email inbox.
+    </p>
+  </div>
+</section>

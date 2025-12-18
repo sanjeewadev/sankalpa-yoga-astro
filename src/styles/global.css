@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------
+  SANKALPA YOGA THEME CONFIGURATION
+  -------------------------------------------------------
+*/
+
+@theme {
+  /* COLORS */
+  /* These automatically generate utilities like bg-primary, text-accent, etc. */
+  --color-primary: #2f4f4f; /* Dark Slate Gray */
+  --color-primary-dark: #1a2f2f;
+  --color-secondary: #f4f1ea; /* Light Sand */
+  --color-accent: #d27d5d; /* Terracotta */
+  --color-text-main: #1f2937; /* Soft Black */
+  --color-text-muted: #6b7280; /* Gray */
+
+  /* FONTS */
+  --font-display: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* SPACING/BREAKPOINTS (Optional overrides can go here) */
+}
+
+/* -------------------------------------------------------
+  GLOBAL BASE STYLES
+  -------------------------------------------------------
+*/
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-secondary);
+    color: var(--color-text-main);
+
+    /* CRITICAL FIX FOR STICKY HEADER: 
+       This ensures that when you click a link that scrolls to a section, 
+       the section title isn't hidden behind your sticky navbar.
+    */
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    /* Removes the gray highlight on tap for mobile (makes it feel like an app) */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* BRANDING POLISH:
+     Change the color of highlighted text to match your Terracotta accent 
+     instead of the default ugly blue.
+  */
+  ::selection {
+    background-color: var(--color-accent);
+    color: white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-primary);
+  }
+}
+
+/* -------------------------------------------------------
+  UTILITY CLASSES
+  -------------------------------------------------------
+*/
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent 
+           text-base font-medium rounded-md text-white bg-primary 
+           hover:bg-primary-dark transition duration-300 ease-in-out cursor-pointer shadow-sm;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-primary 
+           text-base font-medium rounded-md text-primary bg-transparent 
+           hover:bg-primary hover:text-white transition duration-300 ease-in-out cursor-pointer;
+  }
+}
+
+/* -------------------------------------------------------
+  CUSTOM UTILITIES
+  -------------------------------------------------------
+*/
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}

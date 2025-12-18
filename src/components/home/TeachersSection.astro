@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets';
+
+// Imports (Make sure these file names match exactly what is in src/assets)
+import teacher1Img from '../../assets/200-hour-yoga-teacher-training-class.avif';
+import teacher2Img from '../../assets/sri-lanka-yoga-retreat-center-hero.avif'; 
+import teacher3Img from '../../assets/yoga-community-students-group-photo.avif'; 
+
+const teachers = [
+  {
+    name: "Dr. Aryan Sharma",
+    role: "Founder & Principal Guru",
+    image: teacher1Img,
+    bio: "With over 40 years of practice in the Himalayan tradition, Dr. Sharma bridges ancient vedic wisdom with modern holistic health.",
+  },
+  {
+    name: "Elena Vasquez, E-RYT 500",
+    role: "Lead Trainer & Asana Specialist",
+    image: teacher2Img,
+    bio: "Former professional dancer turned yogi, Elena is renowned for her precise alignment cues and dynamic vinyasa sequencing.",
+  },
+  {
+    name: "Kenji Tanaka",
+    role: "Anatomy & Philosophy Instructor",
+    image: teacher3Img,
+    bio: "A physiotherapist and meditation guide, Kenji makes complex anatomy accessible and deeply relevant to practice.",
+  }
+];
+---
+
+<section class="py-24 bg-secondary">
+  <div class="container-custom">
+    
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-accent font-bold tracking-wider uppercase text-sm">Our Lineage</span>
+      <h2 class="text-4xl font-bold text-primary mt-2 mb-4">
+        Guided by Masters
+      </h2>
+      <p class="text-text-muted text-lg">
+        Our faculty are not just teachers; they are lifelong practitioners dedicated to passing down authentic wisdom with integrity and clarity.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      
+      {teachers.map((teacher) => (
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ease-in-out transform hover:-translate-y-2">
+          
+          <div class="relative aspect-[4/5] overflow-hidden">
+            <Image 
+              src={teacher.image} 
+              alt={teacher.name}
+              width={400} 
+              height={500}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+          
+          <div class="p-8 relative">
+            <span class="inline-block absolute -top-5 left-8 px-4 py-2 bg-accent text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md">
+              {teacher.role}
+            </span>
+            
+            <h3 class="text-2xl font-bold text-primary mt-4 mb-3 group-hover:text-accent transition-colors">
+              {teacher.name}
+            </h3>
+            <p class="text-text-muted leading-relaxed">
+              {teacher.bio}
+            </p>
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+  </div>
+</section>

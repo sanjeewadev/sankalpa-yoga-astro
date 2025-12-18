@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  label?: string; // Optional top tag (e.g. "Since 2026")
+  image?: string; // Background image URL
+}
+
+const { 
+  title, 
+  subtitle, 
+  label, 
+  image = "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop" // Default fallback image
+} = Astro.props;
+---
+
+<section class="relative h-[60vh] flex items-center justify-center overflow-hidden bg-primary-dark">
+  
+  <div class="absolute inset-0 z-0">
+    <img 
+      src={image} 
+      alt={title} 
+      class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+    />
+    <div class="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/60 via-transparent to-black/60"></div>
+  </div>
+
+  <div class="container-custom relative z-10 text-center max-w-4xl mx-auto px-4">
+    
+    {label && (
+      <span class="inline-block py-1 px-3 mb-6 rounded-full border border-white/30 bg-white/10 backdrop-blur-md text-white text-xs font-bold tracking-widest uppercase">
+        {label}
+      </span>
+    )}
+
+    <h1 class="text-4xl md:text-6xl font-display font-bold text-white mb-6 drop-shadow-lg">
+      {title}
+    </h1>
+
+    {subtitle && (
+      <p class="text-lg md:text-xl text-gray-100 leading-relaxed max-w-2xl mx-auto font-light drop-shadow-md">
+        {subtitle}
+      </p>
+    )}
+    
+  </div>
+</section>

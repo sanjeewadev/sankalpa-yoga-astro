@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/layout/Navbar.astro';
+import Footer from '../components/layout/Footer.astro';
+
+import PageHero from '../components/common/PageHero.astro';
+import ContactSection from '../components/contact/ContactSection.astro';
+---
+
+<Layout title="Contact Us - Start Your Journey">
+  <Navbar slot="header" />
+  
+  <main>
+    <PageHero 
+      title="Get in Touch" 
+      subtitle="Have questions about our Teacher Training or Retreats? We are here to help you plan your journey."
+      label="Start Your Journey"
+      image="https://images.unsplash.com/photo-1600618528240-fb9fc964b853?q=80&w=1170&auto=format&fit=crop"
+    />
+    <ContactSection />
+  </main>
+
+  <Footer slot="footer" />
+</Layout>
