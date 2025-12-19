@@ -1,5 +1,5 @@
 ---
-import {Image} from 'astro:assets';
+import { Image } from 'astro:assets';
 import HeroImage from '../../assets/sattvic-healthy-food-bowl.avif';
 ---
 
@@ -9,9 +9,13 @@ import HeroImage from '../../assets/sattvic-healthy-food-bowl.avif';
     <Image
       src={HeroImage}
       alt="Yoga Practice in Nature" 
+      widths={[640, 768, 1024, 1280, HeroImage.width]}
+      sizes="(max-width: 768px) 100vw, 100vw"
       loading="eager"
+      fetchpriority="high"
       class="w-full h-full object-cover"
     />
+    
     <div class="absolute inset-0 bg-primary-dark/40"></div>
   </div>
 

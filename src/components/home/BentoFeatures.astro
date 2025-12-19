@@ -2,8 +2,10 @@
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 
-import Image1 from '../../assets/jungle-yoga-shala-ahangama-view.avif'; // Update filename if needed
-import Image2 from '../../assets/luxury-eco-retreat-accommodation-villa.avif'; // Update filename if needed
+import Image1 from '../../assets/jungle-yoga-shala-ahangama-view.avif';
+import Image2 from '../../assets/luxury-eco-retreat-accommodation-villa.avif';
+// NEW IMPORT: Please save your Unsplash food image to assets folder!
+import foodImg from '../../assets/yoga-img-(5).avif'; 
 ---
 
 <section class="py-20 bg-white">
@@ -23,7 +25,10 @@ import Image2 from '../../assets/luxury-eco-retreat-accommodation-villa.avif'; /
       <div class="group relative col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2 rounded-3xl overflow-hidden cursor-pointer">
         <Image 
           src={Image1}
-          alt="Teacher Training Group" 
+          alt="Teacher Training Group"
+          widths={[640, 768, 1024, Image1.width]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          loading="lazy"
           class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -45,6 +50,9 @@ import Image2 from '../../assets/luxury-eco-retreat-accommodation-villa.avif'; /
         <Image
           src={Image2}
           alt="Yoga Shala View" 
+          widths={[400, 768, Image2.width]}
+          sizes="(max-width: 768px) 100vw, 25vw"
+          loading="lazy"
           class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
@@ -65,9 +73,12 @@ import Image2 from '../../assets/luxury-eco-retreat-accommodation-villa.avif'; /
       </div>
 
       <div class="group relative col-span-1 md:col-span-1 lg:col-span-1 lg:row-span-1 rounded-3xl overflow-hidden">
-         <img 
-          src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop" 
-          alt="Healthy Food" 
+         <Image 
+          src={foodImg} 
+          alt="Healthy Food"
+          widths={[400, 768, foodImg.width]}
+          sizes="(max-width: 768px) 100vw, 25vw"
+          loading="lazy"
           class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>

@@ -1,5 +1,4 @@
 ---
-
 import { Image } from 'astro:assets';
 import image1 from '../../assets/yoga-teacher-training-group.avif';
 import image2 from '../../assets/about-yoga-philosophy-class.avif';
@@ -35,6 +34,8 @@ const rooms = [
             <Image
               src={room.img} 
               alt={room.name} 
+              widths={[400, 768, 1024, room.img.width]}
+              sizes="(max-width: 768px) 100vw, 50vw"
               loading="lazy"
               class="w-full h-64 md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
             />
