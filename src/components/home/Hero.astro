@@ -10,11 +10,6 @@ import HeroImage from '../../assets/sattvic-healthy-food-bowl.avif';
     <Image
       src={HeroImage}
       alt="Yoga Practice in Nature" 
-      /* OPTIMIZATION CHANGES:
-         1. Added 360 & 480 to widths (for smaller/older phones).
-         2. format="webp": WebP decodes faster than AVIF on some mobile chips.
-         3. Updated sizes: Explicitly tells phones < 640px to use the small file.
-      */
       widths={[360, 480, 640, 768, 1024, 1280, HeroImage.width]}
       sizes="(max-width: 640px) 100vw, 100vw"
       format="webp"
