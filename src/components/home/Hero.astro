@@ -10,9 +10,10 @@ import HeroImage from '../../assets/sattvic-healthy-food-bowl.avif';
     <Image
       src={HeroImage}
       alt="Yoga Practice in Nature" 
-      widths={[360, 480, 640, 768, 1024, 1280, HeroImage.width]}
+      widths={[360, 480, 640, 768, 1024, 1280, 1600]}
       sizes="(max-width: 640px) 100vw, 100vw"
       format="webp"
+      quality={80} 
       loading="eager"
       fetchpriority="high"
       class="w-full h-full object-cover"
