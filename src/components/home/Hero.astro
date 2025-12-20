@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+// CONFIRM: Ensure this file name matches exactly what is in your src/assets folder
 import HeroImage from '../../assets/sattvic-healthy-food-bowl.avif';
 ---
 
@@ -9,8 +10,14 @@ import HeroImage from '../../assets/sattvic-healthy-food-bowl.avif';
     <Image
       src={HeroImage}
       alt="Yoga Practice in Nature" 
-      widths={[640, 768, 1024, 1280, HeroImage.width]}
-      sizes="(max-width: 768px) 100vw, 100vw"
+      /* OPTIMIZATION CHANGES:
+         1. Added 360 & 480 to widths (for smaller/older phones).
+         2. format="webp": WebP decodes faster than AVIF on some mobile chips.
+         3. Updated sizes: Explicitly tells phones < 640px to use the small file.
+      */
+      widths={[360, 480, 640, 768, 1024, 1280, HeroImage.width]}
+      sizes="(max-width: 640px) 100vw, 100vw"
+      format="webp"
       loading="eager"
       fetchpriority="high"
       class="w-full h-full object-cover"
